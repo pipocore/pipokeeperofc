@@ -3,6 +3,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "bootstrap": "^5.2.3",
+    "cache-require-paths": "^0.3.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^5.0.0",
     "deep-email-validator": "^0.1.21",
