@@ -57,7 +57,7 @@ function checkboxescheck (form) {
 function geradorval () {
 var form = $('#geradorform')
 form.on('submit', function() {
-   if (form.checkbox.checked === false) {
+   if (form.boxes.checked === false) {
    alert('Marque ao menos um campo.')
    return false;
    }
