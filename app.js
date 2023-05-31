@@ -11,6 +11,10 @@ const port = 8080;
 const session = require('express-session');
 const logger = require('morgan');
 const MongoStore = require('connect-mongo');
+var compression = require('compression');
+app.use(compression())
+ 
+// add all routes
 app.set('views', './server/views');
 app.set('view engine', 'pug');
 app.use(logger('dev'));

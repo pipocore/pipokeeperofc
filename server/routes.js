@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const sendEmail = require('../public/javascripts/SendEmail');
 const router = express.Router();
 
-router.get('/', function(req, res) {
+router.get('/', async function(req, res) {
   res.render('index');
 });
 
@@ -16,7 +16,7 @@ router.get('/404', async function (req, res) {
 res.render('404', {message: 'error'})
 
 })
-router.get('/signup', function(req, res) {
+router.get('/signup', async function(req, res) {
   res.render('signup', { message: 'error'});
 });
 
