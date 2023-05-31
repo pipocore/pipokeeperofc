@@ -1,6 +1,5 @@
 require("express-async-errors");
 require("dotenv").config();
-const serverless = require('serverless-http');
 const express = require("express");
 const passport = require('passport');
 const app = express();
@@ -58,4 +57,4 @@ app.set('http_port', port);
 		console.log('* http server listening on port', app.get('http_port'));
     });
 
-module.exports.handler = serverless(app);
+module.exports = app;
