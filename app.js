@@ -58,4 +58,4 @@ app.set('http_port', port);
 		console.log('* http server listening on port', app.get('http_port'));
     });
 
-module.exports = serverless(app);
+module.exports.handler = serverless(app);
