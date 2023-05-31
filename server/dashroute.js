@@ -79,10 +79,12 @@ const uppercase = Boolean(req.body.mai)
 const lowercase = Boolean(req.body.mi)
 const numbers = Boolean(req.body.nu)
 const symbols = Boolean(req.body.esp)
-if (!uppercase && !lowercase && !numbers && !symbols) {
+const check = uppercase + lowercase + numbers + symbols;
+if (!check) {
 req.flash('Marque ao menos um campo.')
 res.redirect('/gerador')
 }
+else {
 var password = generator.generate({
 	length: length,
 	numbers: numbers,
@@ -91,6 +93,7 @@ var password = generator.generate({
 	symbols: symbols
 });
 res.render('gerador', {resul: password})
+}
 });
 dashboard.post('/:id', async function (req, res) {
 const id = req.params.id
