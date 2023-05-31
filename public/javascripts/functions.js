@@ -55,9 +55,7 @@ function checkboxescheck (form) {
     }
 }
 var form = $('#geradorform')
-form.addEventListener('submit', function (e) {
-    // prevent the form from submitting
-    e.preventDefault();
+form.addEventListener('submit', function () {
     checkboxescheck(form);
 
 });
