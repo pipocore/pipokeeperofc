@@ -54,8 +54,17 @@ function checkboxescheck (form) {
         return true;
     }
 }
+function geradorval () {
 var form = $('#geradorform')
-form.addEventListener('submit', function () {
-    checkboxescheck(form);
-
+form.on('submit', function() {
+   if (form.checkbox.checked === false) {
+   alert('Marque ao menos um campo.')
+   return false;
+   }
+   else {
+    $('#resul').val(resul);
+    return true;
+   }
 });
+
+}
