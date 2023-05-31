@@ -56,7 +56,7 @@ newToken.token = tokentok;
 newToken.expires = 360000;
 newToken.usermail = email;
 await newToken.save();
-const link = `http://localhost:8080/reset/${tokentok}`;
+const link = `https://pipokeeper.onrender.com/reset/${tokentok}`;
 const html = `<b>Olá, ${user.username}!</b><p>Clique no link para resetar sua senha:</p><p>${link}</p>`
 await sendEmail(email, html);
 req.flash('success', 'E-mail de recuperação enviado.')
