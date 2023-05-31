@@ -44,3 +44,20 @@ function search() {
         }
     }
 }
+function checkboxescheck (form) {
+  if (
+    form.form-check-input.checked == false) 
+    {
+        alert ('É necessário selecionar ao menos um campo.');
+        return false;
+    } else {    
+        return true;
+    }
+}
+var form = $('#geradorform')
+form.addEventListener('submit', function (e) {
+    // prevent the form from submitting
+    e.preventDefault();
+    checkboxescheck(form);
+
+});

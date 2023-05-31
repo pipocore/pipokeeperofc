@@ -24,7 +24,7 @@ block content
 			h2.text-center#gertit Gerador
 			.row
 				input(type="text" readonly value=`${resul || 'Resultado aqui.'}` id="resul" name="resul")
-			form(action="/dashboard/gera" method="POST")
+			form#geradorform(action="/dashboard/gera" method="POST")
 				.inputtable.row
 					label Tamanho
 					.col-12#colrange
