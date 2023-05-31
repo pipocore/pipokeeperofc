@@ -33,17 +33,17 @@ block content
 				.inputtable.row
 					.row-md
 						.col.form-check.form-check-inline
-							input#mai.form-check-input.boxes(type='checkbox' name="mai")
+							input#mai.form-check-input(type='checkbox' name="mai")
 							label.form-check-label(for='mai') Maiúsculas
 						.col.form-check.form-check-inline
-							input#nu.form-check-input.boxes(type='checkbox' name="nu")
+							input#nu.form-check-input(type='checkbox' name="nu")
 							label.form-check-label(for='nu') Números
 					.row-md
 						.col.form-check.form-check-inline
-							input#mi.form-check-input.boxes(type='checkbox' name="mi")
+							input#mi.form-check-input(type='checkbox' name="mi" checked)
 							label.form-check-label(for='mi') Minúsculas
 						.col.form-check.form-check-inline
-							input#esp.form-check-input.boxes(type='checkbox' name="esp")
+							input#esp.form-check-input(type='checkbox' name="esp")
 							label.form-check-label(for='esp') Especiais				
 				.row-md
-					button(class="rounded" id="gerad" type="submit" onclick="geradorval()") Gerar nova senha
+					button(class="rounded" id="gerad" type="submit" onsubmit="$('#resul').val(resul)") Gerar nova senha
