@@ -79,6 +79,10 @@ const uppercase = Boolean(req.body.mai)
 const lowercase = Boolean(req.body.mi)
 const numbers = Boolean(req.body.nu)
 const symbols = Boolean(req.body.esp)
+if (!uppercase && !lowercase && !numbers && !symbols) {
+req.flash('Marque ao menos um campo.')
+res.redirect('/gerador')
+}
 var password = generator.generate({
 	length: length,
 	numbers: numbers,
