@@ -8,10 +8,8 @@ module.exports = async function connection() {
       {
         useNewUrlParser: true,
       })
-	  console.log('Mongo connected')
 	}
 	catch(error) {
-        console.log(error)
         process.exit()
     }
 }

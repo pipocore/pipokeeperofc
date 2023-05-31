@@ -21,7 +21,6 @@ passport.use('signup', new LocalStrategy({
 }, async (req, email, password, done) => {
   const user = await User.findOne({'email': email})
   const username = await User.findOne({'username': req.body.username})
-  console.log(user)
   if(user) {
     return done(null, false, req.flash('error', 'E-mail já registrado.'));
   }
@@ -33,7 +32,6 @@ passport.use('signup', new LocalStrategy({
     newUser.email = email;
 	  newUser.username = req.body.username
     newUser.password = newUser.encryptPassword(password);
-  console.log(newUser)
     await newUser.save();
     done(null, newUser);
     }

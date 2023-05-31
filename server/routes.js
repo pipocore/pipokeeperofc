@@ -78,9 +78,7 @@ res.redirect('/404')
 router.post('/reset/:token/', async function (req, res) {
 const newpass = req.body.password;
 const tokentok = req.params.token;
-console.log(tokentok)
 const token = await Token.findOne({token: tokentok});
-console.log(token)
 const mail = token.usermail;
 const user = await User.findOne({email: mail});
 user.password = bcrypt.hashSync(newpass, bcrypt.genSaltSync(10));

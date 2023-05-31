@@ -20,9 +20,7 @@ const nodemailer = require('nodemailer')
             html: html,
         });
 
-        console.log("email sent sucessfully");
     } catch (error) {
-        console.log(error, "email not sent");
     }
 };
 
