@@ -1,0 +1,39 @@
+#adcs.modal.fade
+	.modal-dialog.modal-dialog-centered
+		.modal-content
+			.modal-header
+				h4.modal-title Adicionar
+				button.close(type='button', data-bs-dismiss='modal', aria-label='Close')
+					span(aria-hidden='true') ×
+			.modal-body
+				form(action="/dashboard/nova" method="POST")#nova-form
+					select#single-select-field(class="js-example-basic-single js-states form-control" name="title" data-placeholder="Selecione um tipo" required)
+						option(value="" selected) select
+						option Facebook
+						option Twitter
+						option Instagram
+						option TikTok
+						option Youtube
+						option Linkedin
+						option Github
+						option Pinterest 
+						option Discord
+						option Steam
+						option Tumblr
+						option Twitch
+						option Google 
+						option Microsoft
+						option Spotify
+						option Amazon 
+						option Skype 
+						option Snapchat 
+						option LastFm
+						option Goodreads
+					input.form-control#username(type="text" name="username" placeholder="Usuário" required)
+					input.form-control#pass(type="password" name="pass" placeholder="Senha" required)
+				br
+				a(href="/dashboard/gerador") Ir para o gerador de senhas
+				br
+			.modal-footer
+				button(data-bs-dismiss="modal")#cancel Cancel
+				button(type="submit" form="nova-form") Enviar

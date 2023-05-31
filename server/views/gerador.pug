@@ -1,0 +1,49 @@
+extends layout
+block sidebar
+	.row-flex
+	.divside.col
+		li.active
+			a(href="/dashboard" class="nav-link align-middle px-0")
+				span(class="ms-1 d-none d-sm-inline sidebar") Senhas
+	.divside.col
+		li
+			a(href="/dashboard/gerador" class="nav-link align-middle px-0") 
+				span(class="ms-1 d-none d-sm-inline sidebar") Gerador
+	.divside.col
+		form(action="/logout", method="POST") 
+			button#btlogout(type="submit" class="sidebar") Logout
+	.divside.col
+		h4#ic
+			i(class="fa-regular fa-circle-user sidebar" onclick="account()")
+block content
+	if errors
+		for error, i in errors
+			div.alert.alert-danger #{ error }
+	#gerador.container-fluid
+		div.col-10.mx-auto
+			h2.text-center#gertit Gerador
+			.row
+				input(type="text" readonly value=`${resul || 'Resultado aqui.'}` id="resul" name="resul")
+			form(action="/dashboard/gera" method="POST")
+				.inputtable.row
+					label Tamanho
+					.col-12#colrange
+						output 4
+						input(type="range" value="4" min="4" max="36" oninput="this.previousElementSibling.value = this.value" id="length" name="length")
+				.inputtable.row
+					.row-md
+						.col.form-check.form-check-inline
+							input#mai.form-check-input.styled(type='checkbox' name="mai")
+							label.form-check-label(for='mai') Maiúsculas
+						.col.form-check.form-check-inline
+							input#nu.form-check-input(type='checkbox' name="nu")
+							label.form-check-label(for='nu') Números
+					.row-md
+						.col.form-check.form-check-inline
+							input#mi.form-check-input(type='checkbox' name="mi")
+							label.form-check-label(for='mi') Minúsculas
+						.col.form-check.form-check-inline
+							input#esp.form-check-input(type='checkbox' name="esp")
+							label.form-check-label(for='esp') Especiais				
+				.row-md
+					button(class="rounded" id="gerad" type="submit" onsubmit="$('#resul').val(resul)") Gerar nova senha

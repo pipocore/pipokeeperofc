@@ -1,0 +1,40 @@
+extends layout
+block sidebar
+	.row-flex
+	.divside.col
+		li.active
+			a(href="/dashboard" class="nav-link align-middle px-0")
+				span(class="ms-1 d-none d-sm-inline sidebar") Senhas
+	.divside.col
+		li
+			a(href="/dashboard/gerador" class="nav-link align-middle px-0") 
+				span(class="ms-1 d-none d-sm-inline sidebar") Gerador
+	.divside.col
+		form(action="/logout", method="POST") 
+			button#btlogout(type="submit" class="sidebar") Logout
+	.divside.col
+		h4#ic
+			i(class="fa-regular fa-circle-user sidebar" onclick="account()")
+block content
+	if errors
+		for error, i in errors
+			div.alert.alert-danger #{ error }
+	#accountinfo
+		h1.text-center
+			i.fa-solid.fa-circle-user#accounticon
+		h1.text-center 
+			span#accountit Informações da conta 
+		h2 Nome de usuário
+		form(action="/dashboard/account/updateuser" method="post")
+			input(value=`${user.username}` name="username")
+			button.accbut(type="submit") Atualizar
+		h2 E-mail
+		form(action="/dashboard/account/updatemail" method="post")
+			input(value=`${user.email}` name="email" type="email")
+			button.accbut(type="submit") Atualizar
+		h2 Senha 
+		form(action="/dashboard/account/updatepass" method="post")
+			input( type="password" value=`password` name="password" minlength="6")
+			button.accbut(type="submit") Atualizar
+		form#deletesection(action="/dashboard/account/delete" method="post")
+			button#deleteacc(type="submit") Deletar conta

@@ -1,0 +1,48 @@
+extends layout
+block sidebar
+	.row-flex.side
+	.divside.col
+		li.active
+			a(href="/dashboard" class="nav-link align-middle px-0")
+				span(class="ms-1 d-none d-sm-inline sidebar") Senhas
+	.divside.col
+		li
+			a(href="/dashboard/gerador" class="nav-link align-middle px-0") 
+				span(class="ms-1 d-none d-sm-inline sidebar") Gerador
+	.divside.col
+		form#logoutform(action="/logout", method="POST") 
+			button#btlogout(type="submit" class="sidebar") Logout
+	.divside.col
+		h4#ic
+			i(class="fa-regular fa-circle-user sidebar" onclick="account()")
+block searchbar 
+	div.input-group
+		input(type="search" id="searchbar" class="form-control rounded" placeholder="Pesquisar..." onkeyup="search()")
+		i.fa.fa-search#searchi
+block content
+	#senhas
+		.container-fluid
+			if keptpasses.length > 0
+				each keptpass in keptpasses
+					div.collapsestuff
+						h1
+							button.collapsebt(data-bs-toggle="collapse", data-bs-target=`#${keptpass.title}` aria-expanded="false" aria-controls=`${keptpass.title}`) 
+								i(class=`fa-brands fa-${keptpass.title.toLowerCase()}`) 
+								span.collapsetit #{keptpass.title}
+						div.collapse(id=keptpass.title,  data-bs-parent=".container-fluid")
+							div.row
+								div.form-floating.col
+									input(type="text" class="form-control-plaintext" readonly, value=`${keptpass.usernametokeep}`)
+									label Nome de usuário
+								div.form-floating.col
+									input(type="text" class="form-control-plaintext" readonly, value=`${keptpass.pass}`)
+									label Senha
+								form.col(action=`/dashboard/${keptpass._id}?_method=DELETE` method="POST")
+									button.deletebt(class="delete account-button row mx-2" type="submit") Deletar senha
+				button#adcbt(onclick="adcsen()" class="rounded") + Nova
+			else
+				.col
+					.row
+						p Nenhuma senha adicionada ainda.
+						button#adcbt(onclick="adcsen()" class="rounded") + Nova
+	include modals/add

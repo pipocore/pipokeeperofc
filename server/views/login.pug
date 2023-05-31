@@ -1,0 +1,50 @@
+doctype html
+html
+	head
+		title= title
+		meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet' href='/stylesheets/select2.css')
+		link(rel='stylesheet' href='/stylesheets/select2-bootstrap-5-theme.min.css')
+		script(src="https://kit.fontawesome.com/74290d9b92.js" crossorigin="anonymous") 
+		script(src="/javascripts/bootstrap.min.js")  
+		script(src="/javascripts/jquery.min.js") 
+		script(src="/javascripts/select2.full.min.js") 
+		script(src="/javascripts/jquery.form.min.js") 
+		script(src="/javascripts/popper.min.js")
+		script(src="/javascripts/functions.js") 
+	body.indexes
+		.col 
+			h1.text-center.pagetit pipokeeper
+		#login.center-vertical
+			div.col-10.mx-auto
+				if errors
+					for error, i in errors
+						div.alert.alert-danger#alertdiv #{ error }
+				if successes 
+					for success, i in successes 
+						div.alert.alert-success#alertdiv #{ success }
+				form#logincard(method='post' action='/login')
+					h2.text-center#logtit Login
+					.input-group
+						span.input-group-text
+							i.fa-solid.fa-envelope
+						input.form-control.logiput1(type='text', id='email-tf', name='email' placeholder="E-mail")
+					.input-group 
+						span.input-group-text
+							i.fa-solid.fa-lock 
+						input.form-control.logiput2(type='password', id='pass-tf', name='password' placeholder="Senha")
+					#row1
+						button(type='submit')#btn_sign_in
+							| Login
+					hr
+					.btm-links
+						#forgot-password
+							button(type='button', onclick="lostpass()") Esqueceu sua senha?
+						#create-account
+							a(href='/signup') Criar uma conta
+						button(type='button' onclick="cancel()")#cancellog Cancelar
+	include modals/lost-password

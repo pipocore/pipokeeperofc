@@ -1,0 +1,423 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Jomhuria&family=Poppins&display=swap');
+
+
+* {
+box-sizing: border-box;
+}
+body {
+    background-color: rgb(252, 252, 252);
+    font-family: 'Poppins', sans-serif;
+  }
+.indexes {
+background: rgb(255,168,183);
+  background: linear-gradient(20deg, rgb(255, 168, 183) 10%, rgb(253, 235, 238) 90%); 
+height: 100vh;
+overflow: hidden;
+;
+}
+  .sidenav {
+    height: 100vh;
+  }
+  #sear {
+    margin-top: 30px;
+    height: 13%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav-link {
+    color: black;
+  }
+  #fafe {
+    margin-top: 0;
+    color:rgb(255, 168, 183);
+    font-family: 'Jomhuria', cursive;
+    font-size: 65px;
+    text-shadow: -1px -1px 0px rgb(247, 247, 247),
+    3px 3px 0px rgb(247, 247, 247),
+    6px 6px 0px #00000055;
+}
+  ul {
+    margin-top: 80px;
+  }
+  .divside {
+    padding: 20px;
+  }
+  .divside:hover {
+  padding: 20px;
+  box-shadow: rgba(255, 168, 183, 0.3) 0px 12px 28px 0px, rgba(255, 168, 183, 0.15) 0px 2px 4px 0px, rgba(255, 168, 183, 0.05) 0px 0px 0px 1px inset;
+  
+  }
+  
+  .sidebar {
+  font-size: 32px;
+  margin-top: 15px;
+  
+  }
+  #searchi {
+  margin-left: 10px;
+  margin-top: 10px;
+  
+  }
+  #ic {
+  text-align: center;
+    }
+  #ic:hover {
+  color:rgb(255, 168, 183);
+  }
+  #ot {
+  margin-right: auto;
+  margin-left: auto;
+  }
+  #adcbt {
+  margin-top: 15px;
+  width: 90px;
+  height: 40px;
+  position: absolute;
+  bottom: 680px;
+  left: 1220px;
+  box-shadow: rgba(139, 139, 139, 0.3) 0px 2px 4px;
+  
+  }
+  .fa-brands {
+  margin-right: 20px;
+  }
+  button {
+  background: linear-gradient(90deg, rgb(251, 207, 214), rgb(255, 168, 183));
+  color:whitesmoke;
+  border: none;
+  height: 35px;
+  width: 200px;
+  border-radius: 20px;
+  
+  }
+  .collapsestuff {
+  background: white;
+  padding-left: 10px;
+  width: 1000px;
+  text-align: left;
+  display: block;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border: 1px solid gainsboro;
+  border-collapse: collapse;
+  font-size: 18px;
+  margin-bottom: 5px;
+  }
+  .collapsebt {
+  background:white;
+  color: rgb(255, 168, 183);
+  height: 60px;
+  font-size: 25px;
+  width: auto;
+  }
+  .collapsestuff:hover {
+  box-shadow: rgba(255, 168, 183, 0.3) 0px 12px 28px 0px, rgba(255, 168, 183, 0.15) 0px 2px 4px 0px, rgba(255, 168, 183, 0.05) 0px 0px 0px 1px inset;
+  }
+  button#btlogout {
+  color: black;
+  background: none;
+  box-shadow: none;
+  width: auto;
+  padding: 10px;
+  }
+  button#btlogout:hover {
+  color: rgb(255, 168, 183);
+  
+  }
+  .deletebt {
+  margin-top: 15px;
+  text-align: center;
+  width: auto;
+  }
+  #cancel {
+  margin-right: 2px;
+  
+  }
+  button#log {
+  height: 50px;
+  width: 175px;
+  margin: 2px;
+  background: white;
+  color:rgb(255, 168, 183);
+  margin-top: 30px;
+  font-size: 25px;
+  box-shadow: rgba(139, 139, 139, 0.3) 0px 2px 4px;
+  }
+  #fakelogo > i {
+  position: relative;
+  right: 44%;
+  }
+
+
+#accountinfo {
+  float: right;
+  width: 90%;
+  height: 530px;
+}
+
+#accountinfo > h2 {
+  width: 80%;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-left: 2px;
+  margin-bottom: 10px;
+  margin-top: 55px;
+}
+#accountinfo > h2:first-of-type {
+margin-top: 30px;
+}
+#accountinfo > form input{
+  border-width: 1px;
+  border-style: solid;
+  width: 80%;
+  font-size: .7em;
+  padding: 7px 0;
+  float: left;
+  background-color: white;
+  text-align: center;
+}
+
+.accbut {
+float: right;
+width: 100px;
+}
+
+#titleindex {
+margin-top: 10vh;
+margin-left: 10vh;
+color: rgb(0, 0, 0);
+}
+#login, #account-form-container {
+width: 90vh;
+margin: 50px auto;
+}
+#logincard, #account-form, #gerador {
+box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+text-align: center;
+background-color: white;
+padding-left: 40px;
+padding-right: 40px;
+padding-bottom: 20px;
+width: 600px;
+height: 400px;
+}
+.pagetit {
+margin-top: 30px;
+color:rgb(255, 168, 183);
+font-family: 'Jomhuria', cursive;
+font-size: 65px;
+text-shadow: -1px -1px 0px rgb(247, 247, 247),
+3px 3px 0px rgb(247, 247, 247),
+6px 6px 0px #00000055;
+}
+#logtit, #signtit {
+padding-top: 40px;
+padding-bottom: 20px;
+font-weight: 600;
+}
+#gertit {
+padding-top: 40px;
+padding-bottom: 10px;
+font-weight: 600;
+}
+#btn_sign_in, #account-form-btn2 {
+margin-top: 10px;
+}
+.input-group-text {
+color:rgb(251, 207, 214);
+background-color: white;
+}
+#cancellog, #create-account {
+margin-top: 10px;
+}
+#row1s {
+margin-top: 25px;
+}
+#cancellogs {
+margin-left: 10px;
+}
+#already-registered {
+margin-top: 25px;
+
+}
+a {
+color: black;
+
+}
+.nav-link:hover {
+color:rgb(255, 168, 183);
+}
+#indeximage {
+height: 50vh;
+width: 32vw;
+margin-left: 10vh;
+}
+#logindex  {
+margin-top: 25vh;
+
+}
+#fafes {
+    margin-top: 0;
+    color:rgb(255, 168, 183);
+    font-family: 'Jomhuria', cursive;
+    font-size: 65px;
+    text-shadow: -1px -1px 0px rgb(247, 247, 247),
+    3px 3px 0px rgb(247, 247, 247),
+    6px 6px 0px #00000055;
+}
+#expl {
+margin-top: 35px;
+color: rgb(91, 91, 91);
+}
+footer {
+padding-top: 120px;
+}
+.fa-copyright {
+margin-right: 5px;
+}
+button.close {
+width: 40px;
+
+}
+#gerad {
+margin-top: 35px;
+box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+}
+.inputtable, #resul {
+margin-top: 7.5px;
+padding: 5px;
+border: 1px solid rgb(255, 168, 183);
+box-shadow: rgba(255, 168, 183, 0.3) 0px 12px 28px 0px, rgba(255, 168, 183, 0.15) 0px 2px 4px 0px, rgba(255, 168, 183, 0.05) 0px 0px 0px 1px inset;
+}
+.form-check-input:checked {
+background-color:rgb(255, 168, 183);
+border-color: rgb(255, 123, 145);
+}
+#resul {
+text-align: center;
+}
+#accounticon {
+margin-right: 150px;
+margin-bottom: 5px;
+font-size: 65px;
+color: rgb(255, 168, 183); 
+}
+#accountit {
+font-size: 25px;
+margin-right: 150px;
+font-weight: 600;
+}
+input[type=range] {
+  height: 10px;
+  appearance: none;
+  margin: 5px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animation-duration: 0.2s;
+  box-shadow: 2px 2px 2px #A6A6A6;
+  background: rgb(252, 252, 252);
+  border-radius: 4px;
+  border: 1px solid rgb(251, 207, 214);
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #A6A6A6;
+  border: 1px solid #F27B7F;
+  height: 15px;
+  width: 15px;
+  border-radius: 21px;
+  background: rgb(255, 168, 183);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5.5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: rgb(252, 252, 252);
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animation-duration: 0.2s;
+  box-shadow: 2px 2px 2px #A6A6A6;
+  background: rgb(255, 168, 183);
+  border-radius: 4px;
+  border: 1px solid #F27B7F;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #A6A6A6;
+  border: 1px solid #F27B7F;
+  height: 15px;
+  width: 15px;
+  border-radius: 21px;
+  background: rgb(255, 168, 183);
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animation-duration: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #FF96AB;
+  border: 1px solid #F27B7F;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #A6A6A6;
+}
+input[type=range]::-ms-fill-upper {
+  background: #FF96AB;
+  border: 1px solid #F27B7F;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #A6A6A6;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #A6A6A6;
+  border: 1px solid #F27B7F;
+  height: 15px;
+  width: 15px;
+  border-radius: 21px;
+  background: #FF96AB;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #FF96AB;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #FF96AB;
+}
+#colrange {
+display: flex;
+flex-direction: row;
+padding: 5px;
+}
+output {
+margin-right: 15px;
+}
+#errorimage {
+width: 75%;
+}
+#alertdiv {
+width: 600px;
+}
+#deletesection {
+margin-top: 100px;
+width: 80%;
+}
+#deleteacc {
+width: 425px;
+}
+#alertindex {
+width: 1600px;
+}
