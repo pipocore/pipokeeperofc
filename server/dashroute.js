@@ -81,7 +81,7 @@ const numbers = Boolean(req.body.nu)
 const symbols = Boolean(req.body.esp)
 const check = uppercase + lowercase + numbers + symbols;
 if (!check) {
-req.flash('Marque ao menos um campo.')
+req.flash('error', 'Marque ao menos um campo.')
 res.redirect('/dashboard/gerador')
 }
 else {
