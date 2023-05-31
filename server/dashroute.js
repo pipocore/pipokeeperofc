@@ -82,7 +82,7 @@ const symbols = Boolean(req.body.esp)
 const check = uppercase + lowercase + numbers + symbols;
 if (!check) {
 req.flash('Marque ao menos um campo.')
-res.redirect('/gerador')
+res.redirect('/dashboard/gerador')
 }
 else {
 var password = generator.generate({
