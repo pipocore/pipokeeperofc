@@ -67,4 +67,3 @@ app.set('http_port', port);
 	require('http').createServer(app).listen(app.get('http_port'), () => {
     });
 }
-module.exports = app;
