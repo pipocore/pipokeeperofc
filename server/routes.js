@@ -12,11 +12,11 @@ router.get('/', async function(req, res) {
 });
 
 router.get('/404', async function (req, res) {
-res.render('404', {message: 'error'})
+res.render('404', {message: 'error', title: '404'})
 
 })
 router.get('/signup', async function(req, res) {
-  res.render('signup', { message: 'error'});
+  res.render('signup', { message: 'error', title: 'signup'});
 });
 
 router.post('/signup', passport.authenticate('signup', {
@@ -26,7 +26,7 @@ router.post('/signup', passport.authenticate('signup', {
 })); 
 
 router.get('/login', async function(req, res) {
-  res.render('login', {message: 'error'});
+  res.render('login', {message: 'error', title: 'login'});
 });
 
 router.post('/login', passport.authenticate('login', {
@@ -71,7 +71,7 @@ req.flash('error', 'Link expirado.');
 res.redirect('/404')
 }
  else {
-  res.render('reset');
+  res.render('reset', {title: 'reset'});
  }
 })
 router.post('/reset/:token/', async function (req, res) {
@@ -90,7 +90,7 @@ router.get('/dashboard', isAuthenticated, async (req, res) => {
 const userid = req.user.id
 const user = await User.findById(userid)
 let keptpasses = user.keptpasses.map(val => val)
-      res.render('dashboard', {keptpasses, user: req.user})
+      res.render('dashboard', {keptpasses, user: req.user, title:'dashboard'})
       });
 
 router.post('/dashboard/account/delete', async function (req, res) {

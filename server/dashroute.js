@@ -7,7 +7,7 @@ const User = require('./models/user');
 dashboard.get('/account', async function (req, res) {
 userid = req.user.id
 const user = await User.findById(userid)
-res.render('account', {user: user})
+res.render('account', {user: user, title: 'account'})
 
 })
 dashboard.post('/account/updateuser', async function (req, res) {
@@ -53,7 +53,7 @@ res.redirect('/dashboard/account')
 }
 })
 dashboard.get('/gerador', async function(req, res) {
-res.render('gerador', {user: req.user})
+res.render('gerador', {user: req.user, title: 'gerador'})
 });
 dashboard.post('/nova', async function(req, res) {
 const title = req.body.title
@@ -92,7 +92,7 @@ var password = generator.generate({
 	lowercase: lowercase,
 	symbols: symbols
 });
-res.render('gerador', {resul: password})
+res.render('gerador', {resul: password, title: 'gerador'})
 }
 });
 dashboard.post('/:id', async function (req, res) {
