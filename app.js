@@ -1,20 +1,8 @@
-const cluster = require('cluster')
 require('cache-require-paths');
 require("express-async-errors");
 require("dotenv").config();
 const express = require("express");
 const passport = require('passport');
-if (cluster.isMaster) {
-
-    var cpuCount = require('os').cpus().length;
-
-    for (var i = 0; i < cpuCount; i += 1) {
-        cluster.fork();
-    }
-    cluster.on('exit', () => {
-    cluster.fork();
-});
-} else {
 const app = express();
 const compression = require('compression');
 app.use(compression())
@@ -69,4 +57,5 @@ app.use('/dashboard', dashroute);
 app.set('http_port', port);
 	require('http').createServer(app).listen(app.get('http_port'), () => {
     });
-}
+    
+module.exports = app;
