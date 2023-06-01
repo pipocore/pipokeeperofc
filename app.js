@@ -30,7 +30,7 @@ if (cluster.isMaster) {
  
 function start() {
     const app = express();
-    app.server = http.createServer(app);
+    http.createServer(app);
     app.use(compression())
     app.use(express.json());
     app.use(morgan('tiny'));
@@ -68,7 +68,7 @@ done(null, user);
     (async function db() {
     await connection();
 })();
-    app.server.listen(port, () => {
+    app.listen(port, () => {
     });
 }
 
