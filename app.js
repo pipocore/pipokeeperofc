@@ -2,8 +2,10 @@ require('cache-require-paths');
 require("express-async-errors");
 require("dotenv").config();
 const express = require("express");
+const helmet = require('helmet');
 const passport = require('passport');
 const app = express();
+app.use(helmet())
 const compression = require('compression');
 app.use(compression())
 const flash = require('connect-flash');
@@ -57,5 +59,5 @@ app.use('/dashboard', dashroute);
 app.set('http_port', port);
 	require('http').createServer(app).listen(app.get('http_port'), () => {
     });
-    
+
 module.exports = app;
