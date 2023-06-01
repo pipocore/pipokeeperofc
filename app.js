@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const passport = require('passport');
 const app = express();
 app.use(helmet())
+app.disable('x-powered-by');
 const compression = require('compression');
 app.use(compression())
 const flash = require('connect-flash');
@@ -28,7 +29,7 @@ app.use(session({
     saveUninitialized: false,
     unset: 'destroy',
     store: MongoStore.create(({ mongoUrl: process.env.DB_URL , autoRemove: 'native' })),
-    cookie: {maxAge: 10800000},
+    cookie: {maxAge: 10800000, secure: true},
 }));
 app.use(passport.authenticate('session'));
 app.use(flash());
