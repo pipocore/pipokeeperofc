@@ -11,6 +11,9 @@ if (cluster.isMaster) {
     for (var i = 0; i < cpuCount; i += 1) {
         cluster.fork();
     }
+    cluster.on('exit', () => {
+    cluster.fork();
+});
 } else {
 const app = express();
 const compression = require('compression');
