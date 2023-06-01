@@ -8,7 +8,7 @@ const sendEmail = require('../public/javascripts/SendEmail');
 const router = express.Router();
 
 router.get('/', async function(req, res) {
-  res.render('index');
+  res.render('index', {title: pipokeeper});
 });
 
 router.get('/404', async function (req, res) {
