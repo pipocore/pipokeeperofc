@@ -5,8 +5,12 @@ const express = require("express");
 const helmet = require('helmet');
 const passport = require('passport');
 const app = express();
-app.use(helmet())
 app.disable('x-powered-by');
+app.use(helmet.contentSecurityPolicy({
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'"],
+    styleSrc: ["'self'"],
+    connectSrc: ["'self'", 'https://kit.fontawesome.com']}))
 const compression = require('compression');
 app.use(compression())
 const flash = require('connect-flash');
