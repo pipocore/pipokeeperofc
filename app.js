@@ -8,9 +8,9 @@ const app = express();
 app.disable('x-powered-by');
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: ["'self'"],
-    scriptSrc: ["'self'"],
+    scriptSrc: ["'self'" , 'https://kit.fontawesome.com/'],
     styleSrc: ["'self'"],
-    connectSrc: ["'self'", 'https://kit.fontawesome.com']}))
+    connectSrc: ["'self'"],}))
 const compression = require('compression');
 app.use(compression())
 const flash = require('connect-flash');
