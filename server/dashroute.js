@@ -20,7 +20,7 @@ res.redirect('/dashboard/account')
 }
 else {
 user.username = newusername;
-user.save();
+await user.save();
 res.redirect('/dashboard/account')
 }
 })
@@ -34,7 +34,7 @@ res.redirect('/dashboard/account')
 }
 else {
 user.email = newmail;
-user.save();
+await user.save();
 res.redirect('/dashboard/account')
 }
 })
@@ -48,11 +48,11 @@ res.redirect('/dashboard/account')
 }
 else {
 user.password = bcrypt.hashSync(newpass, bcrypt.genSaltSync(10));
-user.save();
+await user.save();
 res.redirect('/dashboard/account')
 }
 })
-dashboard.get('/gerador', function(req, res) {
+dashboard.get('/gerador', async function(req, res) {
 res.render('gerador', {user: req.user})
 });
 dashboard.post('/nova', async function(req, res) {

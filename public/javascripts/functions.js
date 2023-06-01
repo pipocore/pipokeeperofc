@@ -1,17 +1,17 @@
-function cancel () {
+async function cancel () {
 window.location.href = '/';
 }
-function lostpass (){ 
+async function lostpass (){ 
 		$('#get-credentials').modal('show');
 	};
-function adcsen () {
+async function adcsen () {
 $('#adcs').modal("show")
 $('.collapse').collapse('hide')
 }
-function remv() {
+async function remv() {
 $('#adcs').toggle('hide')
 }
- function sub () {
+async function sub () {
 $('submit').on('click', trigger('submit'))
 };
 $(document).ready(function(){
@@ -26,11 +26,11 @@ $(document).ready(function(){
 });
 
 
-function account () {
+async function account () {
 window.location.href = '/dashboard/account'
 
 }
-function search() {
+async function search() {
     let input = document.getElementById('searchbar').value
     input=input.toLowerCase();
     let x = document.querySelectorAll('.collapsestuff');
@@ -42,15 +42,5 @@ function search() {
         else {
             x[i].style.visibility="visible";                 
         }
-    }
-}
-function checkboxescheck (form) {
-  if (
-    form.form-check-input.checked == false) 
-    {
-        alert ('É necessário selecionar ao menos um campo.');
-        return false;
-    } else {    
-        return true;
     }
 }

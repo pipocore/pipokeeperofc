@@ -4,7 +4,6 @@ const User = require('./models/user');
 const Token = require('./models/token')
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
-const mongoose = require('mongoose');
 const sendEmail = require('../public/javascripts/SendEmail');
 const router = express.Router();
 
@@ -26,7 +25,7 @@ router.post('/signup', passport.authenticate('signup', {
   failureRedirect: '/signup',
 })); 
 
-router.get('/login', function(req, res) {
+router.get('/login', async function(req, res) {
   res.render('login', {message: 'error'});
 });
 
@@ -47,10 +46,10 @@ const email = req.body.email;
 const user = await User.findOne({'email': email});
 if (!user) {
 req.flash('error', 'E-mail não registrado.');
-res.redirect('/404')
+res.redirect('/404');
 }
 else {
-const tokentok = crypto.randomBytes(32).toString('hex')
+const tokentok = crypto.randomBytes(32).toString('hex');
 const newToken = new Token ();
 newToken.token = tokentok;
 newToken.expires = 360000;
@@ -87,7 +86,7 @@ token.deleteOne()
 req.flash('success', 'Senha modificada com sucesso.')
 res.redirect('/login')
 })
-router.get('/dashboard', isAuthenticated, async (req, res, next) => {
+router.get('/dashboard', isAuthenticated, async (req, res) => {
 const userid = req.user.id
 const user = await User.findById(userid)
 let keptpasses = user.keptpasses.map(val => val)
@@ -101,7 +100,7 @@ user.deleteOne();
 req.flash('success', 'Conta deletada com sucesso.')
 res.redirect('/');
 })
-router.post('/logout', function(req, res) {
+router.post('/logout', async function(req, res) {
 delete req.session;
 res.redirect('/')
 });

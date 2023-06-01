@@ -4,6 +4,8 @@ require("dotenv").config();
 const express = require("express");
 const passport = require('passport');
 const app = express();
+const compression = require('compression');
+app.use(compression())
 const flash = require('connect-flash');
 require('./server/passport/passport')
 const connection = require("./server/models/db");
@@ -11,10 +13,6 @@ const port = 8080;
 const session = require('express-session');
 const logger = require('morgan');
 const MongoStore = require('connect-mongo');
-var compression = require('compression');
-app.use(compression())
- 
-// add all routes
 app.set('views', './server/views');
 app.set('view engine', 'pug');
 app.use(logger('dev'));
@@ -48,7 +46,6 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
   done(null, user);
 });
-
 const indexroutes = require('./server/routes')
 const dashroute = require('./server/dashroute')
 app.use('/', indexroutes);
@@ -59,7 +56,6 @@ app.use('/dashboard', dashroute);
 
 app.set('http_port', port);
 	require('http').createServer(app).listen(app.get('http_port'), () => {
-		console.log('* http server listening on port', app.get('http_port'));
     });
 
 module.exports = app;
