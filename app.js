@@ -6,16 +6,14 @@ const helmet = require('helmet');
 const passport = require('passport');
 const app = express();
 app.disable('x-powered-by');
-app.use(helmet.contentSecurityPolicy({
-      directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
-      connectSrc: ["ka-f.fontawesome.com"],
-      objectSrc: ["'none'"],
-      mediaSrc: ["'self'"]
-
-  }
-
+app.use(
+    helmet.contentSecurityPolicy({
+        directives: {
+            defaultSrc: ["'self'", 'https://ka-f.fontawesome.com', 'https://fonts.gstatic.com'],
+            scriptSrc: ["'self'", "'unsafe-inline'", 'https://ka-f.fontawesome.com'],
+            styleSrc: ["'self'","'unsafe-inline'", 'https://ka-f.fontawesome.com', 'https://fonts.googleapis.com'],
+            connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
+        },
 }));
 const compression = require('compression');
 app.use(compression())
