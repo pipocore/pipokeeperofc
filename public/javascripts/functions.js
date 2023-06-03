@@ -20,7 +20,7 @@ $(document).ready(function(){
   $('#forgotbut').on('click', async function() {
   $('#get-credentials').modal('show');
   });
-  $('#adcbut').on('click', async function() {
+  $('#adcbt').on('click', async function() {
   $('#adcs').modal("show")
   $('.collapse').collapse('hide')
   })
