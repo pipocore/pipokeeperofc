@@ -10,7 +10,7 @@ app.use(
     helmet.contentSecurityPolicy({
         directives: {
             defaultSrc: ["'self'", 'https://ka-f.fontawesome.com', 'https://fonts.gstatic.com'],
-            scriptSrc: ["'self'", "'unsafe-inline'", 'https://ka-f.fontawesome.com'],
+            scriptSrc: ["'self'", "'unsafe-inline'", 'https://ka-f.fontawesome.com', 'https://kit.fontawesome.com'],
             styleSrc: ["'self'","'unsafe-inline'", 'https://ka-f.fontawesome.com', 'https://fonts.googleapis.com'],
             connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
         },
