@@ -14,10 +14,11 @@ block sidebar
 			button#btlogout(type="submit" class="sidebar") Logout
 	.divside.col
 		h4#ic
-			i(class="fa-regular fa-circle-user sidebar" onclick="account()")
+			a(href="/dashboard/account")
+				i(class="fa-regular fa-circle-user sidebar")
 block searchbar 
 	div.input-group
-		input(type="search" id="searchbar" class="form-control rounded" placeholder="Pesquisar..." onkeyup="search()")
+		input(type="search" id="searchbar" class="form-control rounded" placeholder="Pesquisar...")
 		i.fa.fa-search#searchi
 block content
 	#senhas

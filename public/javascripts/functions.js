@@ -1,16 +1,3 @@
-async function cancel () {
-window.location.href = '/';
-}
-async function lostpass (){ 
-		$('#get-credentials').modal('show');
-	};
-async function adcsen () {
-$('#adcs').modal("show")
-$('.collapse').collapse('hide')
-}
-async function remv() {
-$('#adcs').toggle('hide')
-}
 async function sub () {
 $('submit').on('click', trigger('submit'))
 };
@@ -20,24 +7,24 @@ $(document).ready(function(){
     theme: "bootstrap-5",
     placeholder: 'Selecione um tipo'
 } );
-  $(window).on('load', function() {
+  $(window).on('load', async function() {
         $('#set-password').modal('show');
     });
-  $('.cancel').on('click', function() {window.location.href = '/'});
-  $('.cancellogs').on('click', function () {
+  $('.cancel').on('click', async function() {window.location.href = '/'});
+  $('.cancellogs').on('click', async function() {
   
   window.location.href = '/'});
-  $('.cancellog').on('click', function () {
+  $('.cancellog').on('click', async function() {
   
   window.location.href = '/'});
-});
-
-
-async function account () {
-window.location.href = '/dashboard/account'
-
-}
-async function search() {
+  $('#forgotbut').on('click', async function() {
+  $('#get-credentials').modal('show');
+  });
+  $('#adcbut').on('click', async function() {
+  $('#adcs').modal("show")
+  $('.collapse').collapse('hide')
+  })
+  $('#searchbar').on('keyup', async function() {
     let input = document.getElementById('searchbar').value
     input=input.toLowerCase();
     let x = document.querySelectorAll('.collapsestuff');
@@ -50,4 +37,5 @@ async function search() {
             x[i].style.visibility="visible";                 
         }
     }
-}
+  })
+});
