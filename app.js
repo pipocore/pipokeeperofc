@@ -9,9 +9,9 @@ app.disable('x-powered-by');
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
-            defaultSrc: ["'self'", 'https://ka-f.fontawesome.com', 'https://fonts.gstatic.com'],
-            scriptSrc: ["'self'", "'unsafe-inline'", 'https://ka-f.fontawesome.com', 'https://kit.fontawesome.com'],
-            styleSrc: ["'self'","'unsafe-inline'", 'https://ka-f.fontawesome.com', 'https://fonts.googleapis.com'],
+            defaultSrc: ["'self'", 'https://ka-f.fontawesome.com', 'https://fonts.gstatic.com', 'pipokeeper.onrender.com'],
+            scriptSrc: ["'self'", "'unsafe-inline'", 'https://ka-f.fontawesome.com', 'https://kit.fontawesome.com', 'pipokeeper.onrender.com'],
+            styleSrc: ["'self'","'unsafe-inline'", 'https://ka-f.fontawesome.com', 'https://fonts.googleapis.com', 'pipokeeper.onrender.com'],
             connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
         },
 }));
