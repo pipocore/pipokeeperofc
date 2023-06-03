@@ -9,7 +9,8 @@ app.disable('x-powered-by');
 app.use(helmet.contentSecurityPolicy({
       directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "https://kit.fontawesome.com/74290d9b92.js"],
+      scriptSrc: ["'self'"],
+      connectSrc: ["ka-f.fontawesome.com"],
       objectSrc: ["'none'"],
       mediaSrc: ["'self'"]
 
@@ -38,7 +39,7 @@ app.use(session({
     saveUninitialized: false,
     unset: 'destroy',
     store: MongoStore.create(({ mongoUrl: process.env.DB_URL , autoRemove: 'native' })),
-    cookie: {maxAge: 10800000, secure: true},
+    cookie: {maxAge: 300000, secure: true},
 }));
 app.use(passport.authenticate('session'));
 app.use(flash());
