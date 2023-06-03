@@ -27,6 +27,9 @@ $(document).ready(function(){
   $('.cancellogs').on('click', function () {
   
   window.location.href = '/'});
+  $('.cancellog').on('click', function () {
+  
+  window.location.href = '/'});
 });
 
 
