@@ -23,6 +23,8 @@ $(document).ready(function(){
   $(window).on('load', function() {
         $('#set-password').modal('show');
     });
+  $('.cancel').addEventListener("click", window.location.href = '/');
+  $('.cancellogs').addEventListener("click", window.location.href = '/');
 });
 
 
