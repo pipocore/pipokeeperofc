@@ -37,5 +37,9 @@ $(document).ready(function(){
             x[i].style.visibility="visible";                 
         }
     }
+  });
+  $('#length').on('input', async function() {
+  this.previousElementSibling.value = this.value;
+  
   })
 });
