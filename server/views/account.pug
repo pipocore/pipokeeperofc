@@ -13,8 +13,8 @@ block sidebar
 		form(action="/logout", method="POST") 
 			button#btlogout(type="submit" class="sidebar") Logout
 	.divside.col
-		h4#ic
-			a(href="/dashboard/account")
+		h4
+			a#ic(href="/dashboard/account")
 				i(class="fa-regular fa-circle-user sidebar")
 block content
 	if errors
