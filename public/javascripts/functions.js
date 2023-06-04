@@ -1,12 +1,10 @@
-async function sub () {
-$('submit').on('click', trigger('submit'))
-};
 $(document).ready(function(){
   
   $( '#single-select-field' ).select2( {
     theme: "bootstrap-5",
     placeholder: 'Selecione um tipo'
 } );
+  $('submit').on('click', trigger('submit'));
   $(window).on('load', async function() {
         $('#set-password').modal('show');
     });
