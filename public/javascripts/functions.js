@@ -4,7 +4,6 @@ $(document).ready(function(){
     theme: "bootstrap-5",
     placeholder: 'Selecione um tipo'
 } );
-  $('submit').on('click', trigger('submit'));
   $(window).on('load', async function() {
         $('#set-password').modal('show');
     });
