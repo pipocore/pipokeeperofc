@@ -5,7 +5,7 @@ const Token = require('./models/token')
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const sendEmail = require('../public/javascripts/SendEmail');
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 
 router.get('/', async function(req, res) {
   res.render('index', {title: 'pipokeeper'});
