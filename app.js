@@ -2,7 +2,6 @@ require('cache-require-paths');
 require("express-async-errors");
 require("dotenv").config();
 const express = require("express");
-const cors = require('cors')
 const passport = require('passport');
 const app = express();
 app.disable('x-powered-by');
