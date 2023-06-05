@@ -2,23 +2,10 @@ require('cache-require-paths');
 require("express-async-errors");
 require("dotenv").config();
 const express = require("express");
-const helmet = require('helmet');
 const cors = require('cors')
 const passport = require('passport');
 const app = express();
 app.disable('x-powered-by');
-app.use(
-    helmet.contentSecurityPolicy({
-        directives: {
-            defaultSrc: ["'self'", 'https://ka-f.fontawesome.com', 'https://fonts.gstatic.com', 'https://pipokeeper.onrender.com'],
-            scriptSrc: ["'self'", "'unsafe-inline'", 'https://ka-f.fontawesome.com', 'https://kit.fontawesome.com', 'https://pipokeeper.onrender.com'],
-            styleSrc: ["'self'","'unsafe-inline'", 'https://ka-f.fontawesome.com', 'https://fonts.googleapis.com', 'https://pipokeeper.onrender.com'],
-            connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
-        },
-}));
-app.use(cors({
-    origin: ['https://pipokeeper.onrender.com']
-}));
 const compression = require('compression');
 app.use(compression())
 const flash = require('connect-flash');
