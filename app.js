@@ -20,7 +20,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}))
 app.use(express.static(__dirname + '/public'));
-app.use(favicon(app.get('public'), 'favicon.ico'));
+app.use(favicon(__dirname + '/public' + 'favicon.ico'));
 app.set('trust proxy', 1)
 app.use(session({
     secret: process.env.SECRET,
