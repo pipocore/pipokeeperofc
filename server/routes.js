@@ -8,7 +8,7 @@ const sendEmail = require('../public/javascripts/SendEmail');
 const router = express.Router({ mergeParams: true });
 
 router.get('/', async function(req, res) {
-  res.render('index', {title: 'pipokeeper'});
+  res.render('index', {title: 'Pipokeeper'});
 });
 
 router.get('/404', async function (req, res) {
@@ -16,7 +16,7 @@ res.render('404', {message: 'error', title: '404'})
 
 })
 router.get('/signup', async function(req, res) {
-  res.render('signup', { message: 'error', title: 'signup'});
+  res.render('signup', { message: 'error', title: 'Registrar-se'});
 });
 
 router.post('/signup', passport.authenticate('signup', {
@@ -26,7 +26,7 @@ router.post('/signup', passport.authenticate('signup', {
 })); 
 
 router.get('/login', async function(req, res) {
-  res.render('login', {message: 'error', title: 'login'});
+  res.render('login', {message: 'error', title: 'Login'});
 });
 
 router.post('/login', passport.authenticate('login', {
@@ -71,7 +71,7 @@ req.flash('error', 'Link expirado.');
 res.redirect('/404')
 }
  else {
-  res.render('reset', {title: 'reset'});
+  res.render('reset', {title: 'Reset'});
  }
 })
 router.post('/reset/:token/', async function (req, res) {
