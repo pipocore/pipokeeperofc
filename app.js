@@ -7,6 +7,7 @@ const app = express();
 const compression = require('compression');
 app.use(compression())
 const flash = require('connect-flash');
+const path = require('path')
 const favicon = require('serve-favicon');
 require('./server/passport/passport')
 const connection = require("./server/models/db");
@@ -14,13 +15,13 @@ const port = 8080;
 const session = require('express-session');
 const logger = require('morgan');
 const MongoStore = require('connect-mongo');
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.set('views', './server/views');
 app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}))
 app.use(express.static(__dirname + '/public'));
-app.use(favicon(__dirname + '/public/favicon.ico'));
 app.set('trust proxy', 1)
 app.use(session({
     secret: process.env.SECRET,
