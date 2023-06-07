@@ -4,7 +4,6 @@ require("dotenv").config();
 const express = require("express");
 const passport = require('passport');
 const app = express();
-app.disable('x-powered-by');
 const compression = require('compression');
 app.use(compression())
 const flash = require('connect-flash');
