@@ -11,7 +11,6 @@ const favicon = require('serve-favicon');
 require('./server/passport/passport')
 const connection = require("./server/models/db");
 const port = 8080;
-const path = require('path');
 const session = require('express-session');
 const logger = require('morgan');
 const MongoStore = require('connect-mongo');
@@ -21,7 +20,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}))
 app.use(express.static(__dirname + '/public'));
-app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
+app.use(favicon(app.get('public'), 'favicon.ico'));
 app.set('trust proxy', 1)
 app.use(session({
     secret: process.env.SECRET,
